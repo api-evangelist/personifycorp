@@ -1,0 +1,48 @@
+aid: personifycorp
+name: Personify Plans & Pricing
+url: https://personifycorp.com/
+description: |
+  Personify does not publish transparent, self-serve pricing. All of its
+  association management products are sold through a "contact sales / request a
+  demo" model, with pricing customized to organization size, product, modules,
+  and services. Pricing below is directional, drawn from third-party review sites,
+  and should be confirmed with Personify sales. API access is included with a
+  product subscription rather than sold as a standalone metered API.
+model: contact-sales
+currency: USD
+sourced: true
+notes: |
+  Personify became part of Momentive Software in January 2026. Product-level
+  quotes vary widely; the figures here are ballpark ranges reported by
+  independent review/comparison sites, not official Personify list prices.
+products:
+- name: Personify360 / ThreeSixty
+  segment: Large / enterprise associations and nonprofits
+  pricing: Contact sales. Third-party sources report figures on the order of
+    several hundred to a few thousand USD per month depending on users, modules,
+    and implementation - enterprise, quote-based.
+  apiAccess: Novus APIs and the Personify API Library are provisioned to
+    customers through their account manager.
+- name: MemberClicks (MC Professional)
+  segment: Mid-sized professional and trade associations
+  pricing: Contact sales. Independent estimates commonly cited in the low
+    thousands to ~$10,000 USD per year depending on membership size and modules.
+  apiAccess: MC Professional JSON REST API (OAuth 2.0) available to customer
+    organizations.
+- name: Wild Apricot
+  segment: Small associations, clubs, and nonprofits
+  pricing: Contact sales / tiered by number of contacts. Independent estimates
+    commonly cited from roughly $2,000 to $5,000 USD per year for smaller orgs.
+  apiAccess: Public REST API (admin and member, OAuth 2.0) available to account
+    holders.
+- name: A2Z Events
+  segment: Event and expo management
+  pricing: Contact sales, quote-based.
+  apiAccess: Not separately documented as a public API in this review.
+sources:
+- url: https://personifycorp.com/
+  note: Official site - request-a-demo / contact-sales model.
+- url: https://www.softwareadvice.com/nonprofit/personify360-profile/
+  note: Third-party ThreeSixty / Personify360 pricing and reviews.
+- url: https://www.itqlick.com/personify360/pricing
+  note: Third-party Personify360 pricing estimates.

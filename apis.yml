@@ -1,0 +1,104 @@
+aid: personifycorp
+url: https://raw.githubusercontent.com/api-evangelist/personifycorp/refs/heads/main/apis.yml
+name: Personify
+kind: company
+description: Personify (Personify Inc., part of Momentive Software as of January 2026)
+  is a constituent and association management software provider for associations,
+  nonprofits, and member-based organizations. Founded in 1996 and headquartered in
+  Austin, Texas, Personify offers a family of products - the enterprise Personify360 /
+  ThreeSixty AMS, MemberClicks (MC Professional) for mid-sized professional and trade
+  associations, Wild Apricot for small associations and clubs, and A2Z Events for
+  event management. Several products expose documented REST APIs secured with OAuth 2.0.
+  Wild Apricot and MemberClicks publish public developer documentation, while
+  Personify360's Novus APIs (Swagger-documented) are provisioned through a customer's
+  account manager. API access generally requires being a paying customer of the
+  respective product.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Association Management
+- AMS
+- Membership
+- Nonprofit
+- Events
+- Constituent Management
+- CRM
+created: '2026-07-05'
+modified: '2026-07-05'
+specificationVersion: '0.19'
+apis:
+- aid: personifycorp:personify-wild-apricot-api
+  name: Personify Wild Apricot API
+  tags:
+  - Membership
+  - Contacts
+  - Events
+  - Invoices
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://gethelp.wildapricot.com/en/articles/182-using-wildapricot-s-api
+  baseURL: https://api.wildapricot.org
+  properties:
+  - url: https://gethelp.wildapricot.com/en/articles/182-using-wildapricot-s-api
+    type: Documentation
+  - url: https://gethelp.wildapricot.com/en/categories/145-wild-apricot-member-api
+    type: APIReference
+  description: RESTful API for the Wild Apricot small-association product, secured with
+    OAuth 2.0 against base https://api.wildapricot.org (versioned paths such as
+    /v2.2/accounts/{accountId}/...). Split into an admin API and a member API, it
+    exposes contacts, accounts, membership levels, member groups, events, event
+    registrations, invoices, and payments as JSON (or XML). Access requires Wild
+    Apricot account credentials.
+- aid: personifycorp:personify-memberclicks-api
+  name: Personify MemberClicks (MC Professional) API
+  tags:
+  - Membership
+  - Profiles
+  - OAuth
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://help.memberclicks.com/hc/en-us/sections/14749781143437-API
+  baseURL: https://{orgId}.memberclicks.net/api/v1
+  properties:
+  - url: https://help.memberclicks.com/hc/en-us/sections/14749781143437-API
+    type: Documentation
+  - url: https://help.memberclicks.com/hc/en-us/articles/15442876413197-API-Resources
+    type: APIReference
+  description: JSON REST API for the MemberClicks MC Professional AMS, secured with
+    OAuth 2.0. Base URL is organization-scoped (https://{orgId}.memberclicks.net)
+    with resource paths under /api/v1, including member profiles, member types,
+    and member statuses. Documented publicly in the MemberClicks help center;
+    calls require an organization's API client credentials.
+- aid: personifycorp:personify360-novus-api
+  name: Personify360 Novus API
+  tags:
+  - Constituents
+  - Orders
+  - Events
+  - Certifications
+  - Committees
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://personifycorp.com/blog/supercharge-your-data-insights-with-novus-apis/
+  baseURL: https://api.personifycorp.com
+  endpointsModeled: true
+  properties:
+  - url: https://personifycorp.com/blog/supercharge-your-data-insights-with-novus-apis/
+    type: Documentation
+  description: Proprietary Novus API integration layer for the enterprise Personify360 /
+    ThreeSixty AMS, documented with a Swagger (OpenAPI) interface for reporting,
+    large-scale operations, and custom applications over Personify data. Logical
+    resource areas follow the Personify360 modules - constituents (individuals,
+    companies, donors, prospects), orders and products, events and meetings,
+    certifications, and committees/subgroups. The Swagger definition and base URL
+    are provisioned per customer through a Personify account manager rather than
+    published publicly, so the base URL and endpoints here are modeled, not
+    officially documented. Personify360 also ships an older Personify API Library.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/personify-corp
+- type: Website
+  url: https://personifycorp.com
+- type: Documentation
+  url: https://gethelp.wildapricot.com/en/articles/182-using-wildapricot-s-api
+- type: Plans
+  url: plans/personifycorp-plans-pricing.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

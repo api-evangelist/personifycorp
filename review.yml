@@ -1,0 +1,104 @@
+aid: personifycorp
+name: Personify
+review:
+  question: Does Personify expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-05'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. None of Personify's products (Personify360 /
+    ThreeSixty with its Novus APIs, MemberClicks / MC Professional, or Wild Apricot)
+    document a server-push transport - WebSocket (ws:// or wss://) or SSE - on their
+    public API surface. Every documented Personify API is request/response REST over
+    HTTPS secured with OAuth 2.0, so there is no realtime, bidirectional protocol to
+    model with AsyncAPI.
+findings:
+  summary: |
+    Personify does not publish a documented public WebSocket API. Personify
+    (Personify Inc., part of Momentive Software as of January 2026) is an
+    association / constituent management software vendor. Its products expose
+    REST APIs over HTTPS with OAuth 2.0 authentication:
+    Wild Apricot (base https://api.wildapricot.org, versioned paths such as
+    /v2.2/accounts/{accountId}/..., split into admin and member APIs) and
+    MemberClicks MC Professional (organization-scoped base
+    https://{orgId}.memberclicks.net with resources under /api/v1) both publish
+    public developer documentation. The enterprise Personify360 / ThreeSixty AMS
+    offers proprietary Novus APIs documented via a Swagger (OpenAPI) interface,
+    plus an older Personify API Library; these are provisioned per customer
+    through an account manager rather than published on a public developer portal.
+    No WebSocket endpoint is documented anywhere across these products.
+  openSource: |
+    No open-source core. Personify's products are proprietary, hosted AMS
+    platforms. API access is bundled with a product subscription; MemberClicks
+    and Wild Apricot document their APIs publicly, while Personify360 Novus API
+    access (Swagger definition and base URL) is granted per customer.
+  accessModel: |
+    Customer/partner-gated. Wild Apricot and MemberClicks REST APIs are documented
+    publicly but require product account credentials (OAuth 2.0) to call.
+    Personify360 Novus APIs are documented behind a customer relationship and
+    provisioned through a Personify account manager. There is no unified public
+    self-serve developer portal or free API tier for the parent brand.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.wildapricot.org
+      documented: true
+      note: Wild Apricot admin and member REST API, OAuth 2.0, versioned (e.g. /v2.2).
+    - protocol: REST
+      scheme: https
+      baseURL: https://{orgId}.memberclicks.net/api/v1
+      documented: true
+      note: MemberClicks MC Professional JSON REST API, OAuth 2.0, org-scoped base host.
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.personifycorp.com
+      documented: partner
+      note: Personify360 Novus API - Swagger-documented but provisioned per customer;
+        base URL modeled, not officially published.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented on any Personify product API as of the review date.
+  endpointsModeled:
+    - Personify360 Novus API base URL and endpoint paths are modeled from the
+      Personify360 module structure (constituents, orders/products, events/meetings,
+      certifications, committees) because the Swagger definition is provisioned to
+      customers rather than published publicly.
+  endpointsConfirmedRest:
+    - GET https://api.wildapricot.org/v2.2/accounts/{accountId}/Contacts
+    - GET https://api.wildapricot.org/v2.2/accounts/{accountId}/Events
+    - GET https://api.wildapricot.org/v2.2/accounts/{accountId}/Invoices
+    - GET https://api.wildapricot.org/v2.2/accounts/{accountId}/MembershipLevels
+    - GET https://{orgId}.memberclicks.net/api/v1/member-status
+    - GET https://{orgId}.memberclicks.net/api/v1/member-type
+sources:
+  - url: https://gethelp.wildapricot.com/en/articles/182-using-wildapricot-s-api
+    type: Documentation
+    note: Wild Apricot API - base api.wildapricot.org, OAuth 2.0, admin + member APIs, REST JSON/XML.
+  - url: https://gethelp.wildapricot.com/en/categories/145-wild-apricot-member-api
+    type: APIReference
+    note: Wild Apricot member API resource reference (contacts, events, invoices, membership levels).
+  - url: https://help.memberclicks.com/hc/en-us/sections/14749781143437-API
+    type: Documentation
+    note: MemberClicks MC Professional API section - JSON REST, OAuth 2.0.
+  - url: https://help.memberclicks.com/hc/en-us/articles/15442876413197-API-Resources
+    type: APIReference
+    note: MC Professional API resources under /api/v1 (member-status, member-type, etc).
+  - url: https://personifycorp.com/blog/supercharge-your-data-insights-with-novus-apis/
+    type: Documentation
+    note: Personify360 Novus APIs announcement - Swagger interface, partner/customer-provisioned.
+  - url: https://personifycorp.com/
+    type: Website
+    note: Corporate site; contact-sales model; product family overview.
+  - url: https://momentivesoftware.com/press-releases/personify-acquisition/
+    type: PressRelease
+    note: Momentive Software acquisition of Personify (January 2026).
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists on any Personify product API. All
+    documented Personify APIs (Wild Apricot, MemberClicks, Personify360 Novus)
+    are request/response REST over HTTPS with OAuth 2.0. No AsyncAPI document was
+    created because there is no server-push transport to model.
