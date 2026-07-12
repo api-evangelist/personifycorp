@@ -91,6 +91,8 @@ apis:
     published publicly, so the base URL and endpoints here are modeled, not
     officially documented. Personify360 also ships an older Personify API Library.
 common:
+- type: DomainSecurity
+  url: security/personifycorp-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/personify-corp
 - type: Website
