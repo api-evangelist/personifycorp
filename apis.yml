@@ -13,7 +13,18 @@ description: Personify (Personify Inc., part of Momentive Software as of January
   Personify360's Novus APIs (Swagger-documented) are provisioned through a customer's
   account manager. API access generally requires being a paying customer of the
   respective product.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Requires approval
+  confidence: medium
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/personifycorp.png
 tags:
 - Association Management
 - AMS
