@@ -35,7 +35,7 @@ tags:
 - CRM
 created: '2026-07-05'
 modified: '2026-07-05'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: personifycorp:personify-wild-apricot-api
   name: Personify Wild Apricot API
