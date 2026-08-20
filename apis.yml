@@ -29,6 +29,14 @@ tags:
 - Association Management
 - AMS
 - Membership
+- Non-Profit
+- Event
+- Constituent Management
+- CRM
+tags_raw:
+- Association Management
+- AMS
+- Membership
 - Nonprofit
 - Events
 - Constituent Management
@@ -40,6 +48,11 @@ apis:
 - aid: personifycorp:personify-wild-apricot-api
   name: Personify Wild Apricot API
   tags:
+  - Membership
+  - Contacts
+  - Event
+  - Invoices
+  tags_raw:
   - Membership
   - Contacts
   - Events
@@ -63,6 +76,10 @@ apis:
   tags:
   - Membership
   - Profiles
+  - Authentication
+  tags_raw:
+  - Membership
+  - Profiles
   - OAuth
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://help.memberclicks.com/hc/en-us/sections/14749781143437-API
@@ -80,6 +97,12 @@ apis:
 - aid: personifycorp:personify360-novus-api
   name: Personify360 Novus API
   tags:
+  - Constituents
+  - Order
+  - Event
+  - Certifications
+  - Committees
+  tags_raw:
   - Constituents
   - Orders
   - Events
