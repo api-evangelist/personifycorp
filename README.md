@@ -1,4 +1,4 @@
-# Personify (personifycorp)
+# Personify
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,99 +64,92 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Personify (Personify Inc., part of Momentive Software as of January 2026) is a constituent and association management software provider for associations, nonprofits, and member-based organizations. Founded in 1996 and headquartered in Austin, Texas, Personify offers a family of products: the enterprise **Personify360 / ThreeSixty** AMS, **MemberClicks (MC Professional)** for mid-sized professional and trade associations, **Wild Apricot** for small associations and clubs, and **A2Z Events** for event management.
+Personify (Personify Inc., part of Momentive Software as of January 2026) is a constituent and association management software provider for associations, nonprofits, and member-based organizations. Founded in 1996 and headquartered in Austin, Texas, Personify offers a family of products - the enterprise Personify360 / ThreeSixty AMS, MemberClicks (MC Professional) for mid-sized professional and trade associations, Wild Apricot for small associations and clubs, and A2Z Events for event management. Several products expose documented REST APIs secured with OAuth 2.0. Wild Apricot and MemberClicks publish public developer documentation, while Personify360's Novus APIs (Swagger-documented) are provisioned through a customer's account manager. API access generally requires being a paying customer of the respective product.
 
-Several products expose documented REST APIs secured with OAuth 2.0. Wild Apricot and MemberClicks publish public developer documentation; Personify360's proprietary **Novus APIs** are documented via a Swagger (OpenAPI) interface but provisioned per customer through an account manager. **API access generally requires being a paying customer of the respective product** — there is no unified public self-serve developer portal or free API tier for the parent brand.
+**Areas:** Association Management · AMS · Membership · Non-Profit · Event · Constituent Management · CRM
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/personifycorp/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/personifycorp/refs/heads/main/apis.yml)
+## Personify on APIs.io
 
-## Access Model
+Everything profiled for Personify is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/personifycorp/](https://apis.io/providers/personifycorp/)** — or go straight to one of the APIs or properties below.
 
-- **Customer/partner-gated.** Wild Apricot and MemberClicks REST APIs are documented publicly but require product account credentials (OAuth 2.0) to call.
-- **Personify360 Novus API** access — the Swagger definition and base URL — is granted per customer through a Personify account manager, not published on a public portal.
-- **Pricing is contact-sales** across all products (see `plans/`); API access is bundled with a subscription rather than sold as a standalone metered API.
+### APIs (3)
 
-## Tags
+- [Personify Wild Apricot API](https://apis.io/apis/personifycorp/personify-wild-apricot-api/) — RESTful API for the Wild Apricot small-association product, secured with OAuth 2.0 against base https://api.wildapricot.org (versioned paths such as…
+- [Personify MemberClicks (MC Professional) API](https://apis.io/apis/personifycorp/personify-memberclicks-api/) — JSON REST API for the MemberClicks MC Professional AMS, secured with OAuth 2.0. Base URL is organization-scoped (https://{orgId}.memberclicks.net) with…
+- [Personify360 Novus API](https://apis.io/apis/personifycorp/personify360-novus-api/) — Proprietary Novus API integration layer for the enterprise Personify360 / ThreeSixty AMS, documented with a Swagger (OpenAPI) interface for reporting,…
 
-- Association Management
-- AMS
-- Membership
-- Nonprofit
-- Events
-- Constituent Management
-- CRM
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2026-07-05
-- **Modified:** 2026-07-05
+#### Security (1)
 
-## APIs
+Authentication, trust centre, and vulnerability disclosure.
 
-### Personify Wild Apricot API
+- [Personifycorp Domain Security](https://apis.io/security/personifycorp/personifycorp-domain-security/)
 
-RESTful API for the Wild Apricot small-association product, secured with OAuth 2.0 against base `https://api.wildapricot.org` (versioned paths such as `/v2.2/accounts/{accountId}/...`). Split into an admin API and a member API, it exposes contacts, accounts, membership levels, member groups, events, event registrations, invoices, and payments as JSON (or XML). Access requires Wild Apricot account credentials.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://gethelp.wildapricot.com/en/articles/182-using-wildapricot-s-api](https://gethelp.wildapricot.com/en/articles/182-using-wildapricot-s-api)
-- **Base URL:** `https://api.wildapricot.org`
+Published plans, tiers and prices.
 
-#### Tags
+- [Personifycorp Plans Pricing](https://apis.io/plans/personifycorp/personifycorp-plans-pricing/)
 
-- Membership
-- Contacts
-- Events
-- Invoices
+## Where to find this API
 
-#### Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Documentation](https://gethelp.wildapricot.com/en/articles/182-using-wildapricot-s-api)
-- [API Reference](https://gethelp.wildapricot.com/en/categories/145-wild-apricot-member-api)
-
-### Personify MemberClicks (MC Professional) API
-
-JSON REST API for the MemberClicks MC Professional AMS, secured with OAuth 2.0. Base URL is organization-scoped (`https://{orgId}.memberclicks.net`) with resource paths under `/api/v1`, including member profiles, member types, and member statuses. Documented publicly in the MemberClicks help center; calls require an organization's API client credentials.
-
-- **Human URL:** [https://help.memberclicks.com/hc/en-us/sections/14749781143437-API](https://help.memberclicks.com/hc/en-us/sections/14749781143437-API)
-- **Base URL:** `https://{orgId}.memberclicks.net/api/v1`
-
-#### Tags
-
-- Membership
-- Profiles
-- OAuth
-
-#### Properties
-
-- [Documentation](https://help.memberclicks.com/hc/en-us/sections/14749781143437-API)
-- [API Reference](https://help.memberclicks.com/hc/en-us/articles/15442876413197-API-Resources)
-
-### Personify360 Novus API
-
-Proprietary Novus API integration layer for the enterprise Personify360 / ThreeSixty AMS, documented with a Swagger (OpenAPI) interface for reporting, large-scale operations, and custom applications over Personify data. Logical resource areas follow the Personify360 modules — constituents (individuals, companies, donors, prospects), orders and products, events and meetings, certifications, and committees/subgroups. The Swagger definition and base URL are provisioned per customer through a Personify account manager rather than published publicly, so the base URL and endpoints are **modeled, not officially documented**. Personify360 also ships an older Personify API Library.
-
-- **Human URL:** [https://personifycorp.com/blog/supercharge-your-data-insights-with-novus-apis/](https://personifycorp.com/blog/supercharge-your-data-insights-with-novus-apis/)
-- **Base URL:** `https://api.personifycorp.com` *(modeled)*
-
-#### Tags
-
-- Constituents
-- Orders
-- Events
-- Certifications
-- Committees
-
-#### Properties
-
-- [Documentation](https://personifycorp.com/blog/supercharge-your-data-insights-with-novus-apis/)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/personify-corp)
 - [Website](https://personifycorp.com)
 - [Documentation](https://gethelp.wildapricot.com/en/articles/182-using-wildapricot-s-api)
-- [Plans](plans/personifycorp-plans-pricing.yml)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 7.2** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 0.0 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/personifycorp/](https://apis.io/providers/personifycorp/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Personify: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/personifycorp/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
